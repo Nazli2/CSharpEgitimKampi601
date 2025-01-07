@@ -1,0 +1,15 @@
+﻿Create Table Departments
+(
+DepartmentId serial primary key,
+DepartmentName varchar(50) not null
+)
+
+Create Table Employees
+(
+EmployeeId serial primary key,
+EmployeeName varchar(50) not null,
+EmployeeSurname varchar(50) not null,
+EmployeeSalary decimal not null,
+DepartmentId int,
+Foreign Key (DepartmentId) references Departments(DepartmentId) on delete cascade
+)
